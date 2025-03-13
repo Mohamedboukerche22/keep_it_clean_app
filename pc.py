@@ -9,26 +9,21 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # إعداد نافذة التطبيق
         self.setWindowTitle("Recycling App")
-        self.setWindowIcon(QIcon("recyclingproduct.ico"))  # أيقونة مخصصة
+        self.setWindowIcon(QIcon("recyclingproduct.ico"))    
 
-        # إنشاء عنصر لعرض الويب
         self.browser = QWebEngineView()
-        self.browser.setUrl(QUrl("https://mohamedboukerche22.github.io/keep_it_clean2/"))  # تحويل الرابط إلى QUrl
+        self.browser.setUrl(QUrl("https://mohamedboukerche22.github.io/keep_it_clean2/"))     
 
-        # إعداد تخطيط النافذة
         layout = QVBoxLayout()
         layout.addWidget(self.browser)
 
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
-
-        # السماح بتغيير الحجم:
-        self.setMinimumSize(800, 600)  # تعيين الحد الأدنى للحجم (اختياري)
-        self.setWindowState(self.windowState() | Qt.WindowMaximized)  # فتح النافذة في وضع ملء الشاشة عند البداية (اختياري)
-
+        
+        self.setMinimumSize(800, 600)    
+        self.setWindowState(self.windowState() | Qt.WindowMaximized)  
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
